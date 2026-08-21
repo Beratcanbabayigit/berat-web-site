@@ -1526,6 +1526,21 @@ html.mobile-icon-menu header.site-header .site-nav-link[aria-current="page"]{
 }
 </style>
 
+<style id="preloader-hides-header">
+  /* Acilis selamlamasi (Hello, Hola, Selam...) surerken menu gorunmesin;
+     preloader bitip 'locked' kalkinca yumusakca belirsin. */
+  html body.locked header.site-header.site-header{
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+  html body header.site-header.site-header{
+    transition:opacity .55s ease .15s, visibility 0s linear .15s;
+  }
+  @media (prefers-reduced-motion:reduce){
+    html body header.site-header.site-header{transition:none;}
+  }
+</style>
 </head>
 <body class="locked">
 <script>
