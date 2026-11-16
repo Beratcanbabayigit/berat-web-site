@@ -1543,7 +1543,15 @@ html.mobile-icon-menu header.site-header .site-nav-link[aria-current="page"]{
   }
 </style>
 <link rel="canonical" href="https://beratcanbabayigit.com/"/><meta property="og:url" content="https://beratcanbabayigit.com/"/>
-<style>.hero-name-row{margin:0;font-weight:500}.blog-preview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.blog-preview article{padding:28px;border:1px solid var(--line);border-radius:16px}.blog-preview p{color:#b2b0a8;line-height:1.7;font-size:14px;margin:12px 0}.blog-preview h3{font:500 27px/1.25 var(--display)}.blog-preview h3 a:hover{text-decoration:underline}@media(max-width:800px){.blog-preview{grid-template-columns:1fr}}</style></head>
+<style>.hero-name-row{margin:0;font-weight:500}.blog-preview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.blog-preview article{padding:28px;border:1px solid var(--line);border-radius:16px}.blog-preview p{color:#b2b0a8;line-height:1.7;font-size:14px;margin:12px 0}.blog-preview h3{font:500 27px/1.25 var(--display)}.blog-preview h3 a:hover{text-decoration:underline}@media(max-width:800px){.blog-preview{grid-template-columns:1fr}}</style><style id="mobile-nav-spacing">
+@media(max-width:620px){
+  html body{padding-bottom:136px!important;}
+  html body header.site-header.site-header{width:calc(100% - 24px)!important;max-width:440px!important;padding:8px!important;gap:6px!important;box-sizing:border-box!important;bottom:calc(10px + env(safe-area-inset-bottom,0px))!important;}
+  html body header.site-header.site-header .site-nav-links{gap:0!important;}
+  html body header.site-header.site-header .site-nav-link{box-sizing:border-box!important;}
+  html body header.site-header.site-header .contact-pill{box-sizing:border-box!important;}
+}
+</style></head>
 <body class="locked">
 <script>
   if(location.hash){
@@ -2332,6 +2340,13 @@ html.mobile-icon-menu header.site-header .site-nav-link[aria-current="page"]{
     setImp(hdr,{display:'flex','flex-direction':'row','flex-wrap':'nowrap','align-items':'center',
       'justify-content':'space-between','grid-template-columns':'none','position':'fixed',
       'overflow':'visible'});
+    if(window.innerWidth <= 620){
+      setImp(hdr,{'flex-direction':'column','align-items':'stretch'});
+      setImp(wrap,{display:'grid','grid-template-columns':'repeat(5,minmax(0,1fr))','width':'100%','flex':'none'});
+      [].forEach.call(links,function(e){setImp(e,{'min-height':'44px','padding':'8px 2px','width':'100%'});});
+      setImp(pill,{'width':'100%','min-height':'44px','padding':'12px 16px','margin':'0','flex':'none'});
+      [].forEach.call(labels,function(e){setImp(e,{'font-size':window.innerWidth <= 360?'11px':'12px'});});
+    }
   }
   function run(){ enforce(); requestAnimationFrame(enforce); }
   if(document.readyState!=='loading') run();
