@@ -1591,7 +1591,7 @@ html.mobile-icon-menu header.site-header .site-nav-link[aria-current="page"]{
 <section class="hero wrap" id="top">
 <div class="hero-top">
 <div class="eyebrow">E-Ticaret Geliştirici &amp; Web Tasarımcı</div>
-<div class="clock" id="clock">Kayseri, Türkiye — 00:00</div>
+<div class="clock" id="clock">00:00</div>
 </div>
 <h1 class="hero-name-row" aria-label="Berat Can Babayiğit">
 <span class="name half"><span class="scramble" data-text="BERAT CAN">BERAT CAN</span></span>
@@ -1951,7 +1951,7 @@ html.mobile-icon-menu header.site-header .site-nav-link[aria-current="page"]{
 <p>E-ticaret siten hakkında konuşalım. İhtiyaçlarını, hedefini ve zamanlamanı paylaş, sana nasıl yardımcı olabileceğimi anlatayım.</p>
 <div class="contact-links">
 <a href="mailto:beratcanbabayigitt@gmail.com">beratcanbabayigitt@gmail.com</a>
-<a href="tel:+905551511923">+90 555 151 19 23</a>
+
 <a href="https://instagram.com/beratcanbabayigitt" rel="noopener" target="_blank">Instagram — @beratcanbabayigitt</a>
 <a href="https://www.linkedin.com/in/berat-can-babayi%C4%9Fit-a47a1a402/" rel="noopener" target="_blank">LinkedIn</a>
 </div>
@@ -1977,7 +1977,7 @@ html.mobile-icon-menu header.site-header .site-nav-link[aria-current="page"]{
     const d = new Date();
     const h = String(d.getUTCHours()+3).padStart(2,'0').slice(-2);
     const m = String(d.getMinutes()).padStart(2,'0');
-    document.getElementById('clock').textContent = `Kayseri, Türkiye — ${h}:${m}`;
+    document.getElementById('clock').textContent = `${h}:${m}`;
   }
   tick(); setInterval(tick,1000*30);
 
